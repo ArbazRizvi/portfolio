@@ -122,6 +122,10 @@
 <!-- Add oncontextmenu="return false;" to body to disable right-click context menu -->
 <body class="font-sans antialiased text-gray-800 dark:text-dark-text-secondary dark:bg-dark-bg" oncontextmenu="return false;">
 
+    <!-- ====== SCROLL PROGRESS BAR (Logic Simplifed) ====== -->
+    <!-- Positioned fixed at top, high z-index, initially width 0% -->
+    <div id="scroll-progress-bar" style="position: fixed; top: 0; left: 0; height: 5px; background-color: #14B8A6; z-index: 9999; width: 0%; transition: width 0.1s ease-out;"></div>
+
     <!-- Header & Navigation -->
     <header class="bg-white/90 backdrop-blur-md sticky top-0 z-40 shadow-sm w-full dark:bg-dark-bg/90 dark:shadow-gray-700/20">
         <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
