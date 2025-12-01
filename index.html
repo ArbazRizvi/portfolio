@@ -62,7 +62,7 @@
         .dark ::-webkit-scrollbar-thumb { background: #14B8A6; }
         .dark ::-webkit-scrollbar-thumb:hover { background: #0D9488; }
 
-        /* Modals Animation - REMOVED POP/BLUR */
+        /* Modals Animation */
         .modal-content { 
             opacity: 1; 
             transform: scale(1); 
@@ -75,11 +75,6 @@
         /* Active Nav Link Style */
         nav a.nav-active:not([href="#resume"]) { color: #14B8A6; font-weight: 600; }
         .dark nav a.nav-active:not([href="#resume"]) { color: #14B8A6; }
-
-        /* Scroll-to-top Button */
-        #scroll-to-top { position: fixed; bottom: 2rem; right: 2rem; background-color: #14B8A6; color: white; padding: 0.75rem; border-radius: 9999px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); opacity: 0; visibility: hidden; transform: translateY(10px); transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease; z-index: 50; }
-        #scroll-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
-        #scroll-to-top:hover { background-color: #0D9488; }
 
         /* Scroll-reveal Animation */
         .fade-in-section { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
@@ -103,18 +98,52 @@
         #mobile-menu-button.menu-open .icon-menu { transform: rotate(90deg); opacity: 0; }
         #mobile-menu-button.menu-open .icon-x { transform: rotate(0deg); opacity: 1; }
 
-        /* Image Protection Class (Disable Right-click/Drag) */
+        /* Image Protection Class */
         .protected-img {
             pointer-events: none;
-            -webkit-user-select: none; /* Safari */
-            -moz-user-select: none; /* Firefox */
-            -ms-user-select: none; /* IE 10+ */
-            user-select: none; /* Standard */
-            -webkit-user-drag: none; /* Safari */
-            -khtml-user-drag: none; /* Konqueror HTML */
-            -moz-user-drag: none; /* Firefox */
-            -o-user-drag: none; /* Opera */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-user-drag: none;
             user-drag: none;
+        }
+
+        /* --- Circular Progress Scroll Button CSS --- */
+        .progress-wrap {
+            position: fixed;
+            right: 2rem;
+            bottom: 2rem;
+            height: 46px;
+            width: 46px;
+            cursor: pointer;
+            display: block;
+            border-radius: 50px;
+            box-shadow: inset 0 0 0 2px rgba(20, 184, 166, 0.2); /* Default Light Ring */
+            z-index: 100;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(15px);
+            transition: all 200ms linear;
+            background-color: #fff; /* White background for arrow visibility */
+        }
+        .dark .progress-wrap {
+            background-color: #1F2937; /* Dark bg for dark mode */
+            box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.1);
+        }
+        .progress-wrap.active-progress {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .progress-wrap svg path { 
+            fill: none; 
+        }
+        .progress-wrap svg.progress-circle path {
+            stroke: #14B8A6; /* Primary Teal Color for Progress */
+            stroke-width: 4;
+            box-sizing: border-box;
+            transition: all 200ms linear;
         }
     </style>
 </head>
@@ -122,9 +151,17 @@
 <!-- Add oncontextmenu="return false;" to body to disable right-click context menu -->
 <body class="font-sans antialiased text-gray-800 dark:text-dark-text-secondary dark:bg-dark-bg" oncontextmenu="return false;">
 
-    <!-- ====== SCROLL PROGRESS BAR (Logic Simplifed) ====== -->
-    <!-- Positioned fixed at top, high z-index, initially width 0% -->
-    <div id="scroll-progress-bar" style="position: fixed; top: 0; left: 0; height: 5px; background-color: #14B8A6; z-index: 9999; width: 0%; transition: width 0.1s ease-out;"></div>
+    <!-- ====== SCROLL PROGRESS CIRCLE (Replaces old bar/button) ====== -->
+    <div class="progress-wrap shadow-lg" id="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <!-- This path draws the circle border -->
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+        <!-- Arrow Icon in Center -->
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-primary hover:text-primary-dark transition-colors">
+            <i data-lucide="arrow-up" class="w-6 h-6"></i>
+        </div>
+    </div>
 
     <!-- Header & Navigation -->
     <header class="bg-white/90 backdrop-blur-md sticky top-0 z-40 shadow-sm w-full dark:bg-dark-bg/90 dark:shadow-gray-700/20">
@@ -822,13 +859,41 @@
             if (currentYearEl) currentYearEl.textContent = new Date().getFullYear();
             
             // --- Scroll-to-Top Button Logic ---
-            const scrollToTopButton = document.getElementById('scroll-to-top');
-            if (scrollToTopButton) {    
-                window.addEventListener('scroll', () => { 
-                    scrollToTopButton.classList.toggle('show', window.scrollY > 300); 
-                });
-                scrollToTopButton.addEventListener('click', () => { 
-                    window.scrollTo({ top: 0, behavior: 'smooth' }); 
+            // OLD LOGIC REMOVED - REPLACED BY NEW CIRCULAR PROGRESS LOGIC BELOW
+            
+            // --- Circular Progress Scroll Logic ---
+            const progressPath = document.querySelector('.progress-circle path');
+            const pathLength = progressPath.getTotalLength();
+            
+            progressPath.style.transition = 'progressPath.style.transition = \'none\'';
+            progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
+            progressPath.style.strokeDashoffset = pathLength;
+            progressPath.getBoundingClientRect();
+            progressPath.style.transition = 'stroke-dashoffset 10ms linear';
+
+            const updateProgress = () => {
+                const scroll = window.scrollY;
+                const height = document.documentElement.scrollHeight - window.innerHeight;
+                const progress = pathLength - (scroll * pathLength / height);
+                progressPath.style.strokeDashoffset = progress;
+                
+                // Toggle visibility based on scroll
+                const progressWrap = document.getElementById('progress-wrap');
+                if (scroll > 50) {
+                    progressWrap.classList.add('active-progress');
+                } else {
+                    progressWrap.classList.remove('active-progress');
+                }
+            };
+            
+            window.addEventListener('scroll', updateProgress);
+            
+            // Click to scroll top
+            const progressWrap = document.getElementById('progress-wrap');
+            if (progressWrap) {
+                progressWrap.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                 });
             }
             
