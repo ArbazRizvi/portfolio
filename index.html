@@ -287,7 +287,7 @@
                  </p>
                  <div class="inline-block bg-primary/5 border border-primary/20 rounded-lg p-4">
                      <p class="text-lg text-gray-800 dark:text-dark-text font-semibold">
-                         🚀 I am actively seeking graduate (Masters/PhD) or research opportunities in the field of Applied Machine Learning and Computer Vision.
+                         I am actively seeking graduate (Masters/PhD) or research opportunities in the field of Applied Machine Learning and Computer Vision.
                      </p>
                  </div>
             </div>
@@ -704,35 +704,68 @@
         <!-- Research Section -->
         <section id="research" class="py-24 md:py-32 fade-in-section">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-dark-text text-center mb-12 tracking-tight">Research & Publications</h2>
-                <div class="space-y-8">
-                    <!-- Publication 1 (Placeholder) -->
-                    <div class="bg-white dark:bg-dark-card p-6 rounded-xl shadow-lg">
-                        <h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">KidsGuard: A Multimodal Deep Learning Framework for Real-Time Cyberbullying Detection and Physical Risk Mitigation</h3>
-                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Technical Paper, October 25</p>
-                        <p class="text-gray-600 dark:text-dark-text-secondary mb-4">
-                            This paper presents KidsGuard, a novel multimodal Deep Learning (DL) framework for the unified, real-time monitoring of both digital and physical threats facing children. It integrates a fine-tuned BERT Transformer model for high-precision cyberbullying detection (94.6% F1-score) and an advanced Computer Vision module using a Kalman Filter for robust human tracking, even during occlusion.
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-dark-text text-center mb-16 tracking-tight">Research & Publications</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Publication 1 -->
+                    <div class="group bg-white dark:bg-dark-card rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 p-8 flex flex-col h-full hover:-translate-y-1">
+                        <div class="mb-6 flex justify-between items-start">
+                            <div class="bg-blue-50 dark:bg-blue-900/20 p-3 rounded-xl border border-blue-100 dark:border-blue-800">
+                                <i data-lucide="file-text" class="w-8 h-8 text-blue-600 dark:text-blue-400"></i>
+                            </div>
+                            <span class="bg-blue-100 dark:bg-blue-900/40 text-blue-800 dark:text-blue-300 text-xs font-bold px-3 py-1 rounded-full border border-blue-200 dark:border-blue-800">
+                                Technical Paper
+                            </span>
+                        </div>
+                        
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-dark-text mb-2 group-hover:text-primary transition-colors">
+                            KidsGuard: A Multimodal Deep Learning Framework
+                        </h3>
+                        <p class="text-sm font-medium text-gray-500 dark:text-gray-400 mb-4 flex items-center">
+                            <i data-lucide="calendar" class="w-4 h-4 mr-2"></i> October 25, 2024
                         </p>
                         
-                        <div class="flex flex-wrap gap-4">
-                            <a href="KidsGuard Multimodal Deep Learning Framework for Real-Time Cyberbullying Detection.pdf" target="_blank" class="text-primary font-medium hover:text-primary-dark">[Read Paper]</a>
-                            
-                            <!-- 
-                              FIX 2: Added the 'download' attribute.
-                              This tells the browser to download the file named 'kidsguard_arxiv_paper.tex'
-                              instead of trying to display it as text.
-                            -->
-                            <a href="kidsguard_arxiv_paper.tex" download="kidsguard_arxiv_paper.tex" class="text-primary font-medium hover:text-primary-dark">[Download .tex Source]</a>
-                        </div>
-
-                    </div>
-                    <!-- Publication 2 (Thesis) -->
-                    <div class="bg-white dark:bg-dark-card p-6 rounded-xl shadow-lg">
-                        <h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">Kids Guard: Multimodal AI-Powered Child Safety Platform</h3>
-                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Final Year Project Thesis, GC University Faisalabad, 2024</p>
-                        <p class="text-gray-600 dark:text-dark-text-secondary mb-4">The thesis details the development of a full-stack AI application using a fine-tuned BERT model for cyberbullying detection and a Kalman Filter-enhanced Computer Vision pipeline for robust human tracking and occlusion mitigation.
+                        <p class="text-gray-600 dark:text-dark-text-secondary text-base mb-6 leading-relaxed flex-grow">
+                            This paper presents KidsGuard, a novel multimodal Deep Learning (DL) framework for real-time monitoring of digital and physical threats facing children. It integrates a fine-tuned BERT model (94.6% F1-score) and an advanced Computer Vision module using a Kalman Filter for robust tracking.
                         </p>
-                        <a href="kids_guard_thesis.pdf" target="_blank" class="text-primary font-medium hover:text-primary-dark">[View Thesis]</a>
+                        
+                        <div class="flex flex-wrap gap-3 mt-auto pt-4 border-t border-gray-100 dark:border-gray-700">
+                            <a href="KidsGuard Multimodal Deep Learning Framework for Real-Time Cyberbullying Detection.pdf" target="_blank" class="flex items-center justify-center px-4 py-2 bg-primary/10 text-primary hover:bg-primary hover:text-white rounded-lg text-sm font-semibold transition-all">
+                                <i data-lucide="book-open" class="w-4 h-4 mr-2"></i> Read Paper
+                            </a>
+                            <a href="kidsguard_arxiv_paper.tex" download="kidsguard_arxiv_paper.tex" class="flex items-center justify-center px-4 py-2 bg-gray-100 text-gray-600 hover:bg-gray-200 hover:text-gray-900 dark:bg-gray-800 dark:text-gray-400 dark:hover:text-white rounded-lg text-sm font-semibold transition-all">
+                                <i data-lucide="download" class="w-4 h-4 mr-2"></i> .tex Source
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Publication 2 -->
+                    <div class="group bg-white dark:bg-dark-card rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 p-8 flex flex-col h-full hover:-translate-y-1">
+                        <div class="mb-6 flex justify-between items-start">
+                            <div class="bg-purple-50 dark:bg-purple-900/20 p-3 rounded-xl border border-purple-100 dark:border-purple-800">
+                                <i data-lucide="graduation-cap" class="w-8 h-8 text-purple-600 dark:text-purple-400"></i>
+                            </div>
+                            <span class="bg-purple-100 dark:bg-purple-900/40 text-purple-800 dark:text-purple-300 text-xs font-bold px-3 py-1 rounded-full border border-purple-200 dark:border-purple-800">
+                                Thesis
+                            </span>
+                        </div>
+                        
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-dark-text mb-2 group-hover:text-primary transition-colors">
+                            Kids Guard: Multimodal AI-Powered Child Safety Platform
+                        </h3>
+                        <p class="text-sm font-medium text-gray-500 dark:text-gray-400 mb-4 flex items-center">
+                            <i data-lucide="university" class="w-4 h-4 mr-2"></i> GC University Faisalabad, 2024
+                        </p>
+                        
+                        <p class="text-gray-600 dark:text-dark-text-secondary text-base mb-6 leading-relaxed flex-grow">
+                            The thesis details the full-stack development of the Kids Guard application. It covers the system architecture, the fine-tuning process of the BERT model for cyberbullying detection, and the implementation of the Kalman Filter-enhanced Computer Vision pipeline for occlusion mitigation.
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-3 mt-auto pt-4 border-t border-gray-100 dark:border-gray-700">
+                            <a href="kids_guard_thesis.pdf" target="_blank" class="flex items-center justify-center px-4 py-2 bg-purple-600/10 text-purple-600 hover:bg-purple-600 hover:text-white rounded-lg text-sm font-semibold transition-all w-full">
+                                <i data-lucide="file-search" class="w-4 h-4 mr-2"></i> View Full Thesis
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
