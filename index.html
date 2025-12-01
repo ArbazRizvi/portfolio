@@ -28,10 +28,19 @@
                         'primary': '#14B8A6',  
                         'primary-dark': '#0D9488',
                         'light-gray': '#F8FAFC',
-                        'dark-bg': '#111827',
-                        'dark-card': '#1F2937',
-                        'dark-text': '#F3F4F6', 
-                        'dark-text-secondary': '#9CA3AF',
+                        'dark-bg': '#0f172a', /* Slightly deeper blue-black for better contrast */
+                        'dark-card': '#1e293b',
+                        'dark-text': '#f1f5f9', 
+                        'dark-text-secondary': '#94a3b8',
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
                     }
                 },
             },
@@ -58,7 +67,7 @@
         ::-webkit-scrollbar-thumb { background: #14B8A6; border-radius: 10px; }
         ::-webkit-scrollbar-thumb:hover { background: #0D9488; }
         /* Dark mode scrollbar */
-        .dark ::-webkit-scrollbar-track { background: #1F2937; }
+        .dark ::-webkit-scrollbar-track { background: #0f172a; }
         .dark ::-webkit-scrollbar-thumb { background: #14B8A6; }
         .dark ::-webkit-scrollbar-thumb:hover { background: #0D9488; }
 
@@ -77,12 +86,12 @@
         .dark nav a.nav-active:not([href="#resume"]) { color: #14B8A6; }
 
         /* Scroll-reveal Animation */
-        .fade-in-section { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+        .fade-in-section { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
         .fade-in-section.is-visible { opacity: 1; transform: translateY(0); }
 
         /* Background Pattern */
-        body { background-color: #F8FAFC; background-image: radial-gradient(circle at 1px 1px, #E0E7FF 0.5px, #F8FAFC 0.5px); background-size: 20px 20px; transition: background-color 0.3s ease, color 0.3s ease; }
-        .dark body { background-color: #111827; background-image: radial-gradient(circle at 1px 1px, #374151 0.5px, #111827 0.5px); }
+        body { background-color: #F8FAFC; background-image: radial-gradient(circle at 1px 1px, #E0E7FF 0.5px, #F8FAFC 0.5px); background-size: 24px 24px; transition: background-color 0.3s ease, color 0.3s ease; }
+        .dark body { background-color: #0f172a; background-image: radial-gradient(circle at 1px 1px, #1e293b 0.5px, #0f172a 0.5px); }
 
         /* Typing Animation Cursor */
         .ti-cursor { display: inline-block; width: 2px; height: 1em; background-color: #14B8A6; margin-left: 2px; vertical-align: text-bottom; animation: blink 0.7s infinite; }
@@ -128,7 +137,7 @@
             background-color: #fff; /* White background for arrow visibility */
         }
         .dark .progress-wrap {
-            background-color: #1F2937; /* Dark bg for dark mode */
+            background-color: #1e293b; /* Dark bg for dark mode */
             box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.1);
         }
         .progress-wrap.active-progress {
@@ -164,33 +173,33 @@
     </div>
 
     <!-- Header & Navigation -->
-    <header class="bg-white/90 backdrop-blur-md sticky top-0 z-40 shadow-sm w-full dark:bg-dark-bg/90 dark:shadow-gray-700/20">
+    <header class="bg-white/90 backdrop-blur-md sticky top-0 z-40 shadow-sm w-full dark:bg-dark-bg/90 dark:shadow-gray-700/20 border-b border-gray-100 dark:border-gray-800">
         <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo/Name -->
                 <div class="flex-shrink-0">
-                    <a href="#home" class="text-xl font-bold text-gray-900 dark:text-dark-text">Syed Arbaz Ali Rizvi</a>
+                    <a href="#home" class="text-xl font-bold text-gray-900 dark:text-dark-text tracking-tight hover:text-primary transition-colors">Syed Arbaz Ali Rizvi</a>
                 </div>
                 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex md:items-center md:space-x-4 lg:space-x-6" id="desktop-nav-links">
-                    <a href="#about" class="text-gray-600 hover:text-primary dark:text-dark-text-secondary dark:hover:text-primary transition-colors">About</a>
-                    <a href="#education" class="text-gray-600 hover:text-primary dark:text-dark-text-secondary dark:hover:text-primary transition-colors">Education</a>
-                    <a href="#certifications" class="text-gray-600 hover:text-primary dark:text-dark-text-secondary dark:hover:text-primary transition-colors">Certifications</a>
-                    <a href="#projects" class="text-gray-600 hover:text-primary dark:text-dark-text-secondary dark:hover:text-primary transition-colors">Projects</a>
-                    <a href="#research" class="text-gray-600 hover:text-primary dark:text-dark-text-secondary dark:hover:text-primary transition-colors">Research</a>
-                    <a href="#testimonials" class="text-gray-600 hover:text-primary dark:text-dark-text-secondary dark:hover:text-primary transition-colors">Testimonials</a>
-                    <a href="#contact" class="text-gray-600 hover:text-primary dark:text-dark-text-secondary dark:hover:text-primary transition-colors">Contact</a>
+                    <a href="#about" class="text-gray-600 hover:text-primary dark:text-dark-text-secondary dark:hover:text-primary transition-colors font-medium">About</a>
+                    <a href="#education" class="text-gray-600 hover:text-primary dark:text-dark-text-secondary dark:hover:text-primary transition-colors font-medium">Education</a>
+                    <a href="#certifications" class="text-gray-600 hover:text-primary dark:text-dark-text-secondary dark:hover:text-primary transition-colors font-medium">Certifications</a>
+                    <a href="#projects" class="text-gray-600 hover:text-primary dark:text-dark-text-secondary dark:hover:text-primary transition-colors font-medium">Projects</a>
+                    <a href="#research" class="text-gray-600 hover:text-primary dark:text-dark-text-secondary dark:hover:text-primary transition-colors font-medium">Research</a>
+                    <a href="#testimonials" class="text-gray-600 hover:text-primary dark:text-dark-text-secondary dark:hover:text-primary transition-colors font-medium">Testimonials</a>
+                    <a href="#contact" class="text-gray-600 hover:text-primary dark:text-dark-text-secondary dark:hover:text-primary transition-colors font-medium">Contact</a>
                     
                     <!-- Dark Mode Toggle (Desktop) -->
-                    <button id="dark-mode-toggle-desktop" class="ml-4 p-2 rounded-full text-gray-600 dark:text-dark-text-secondary hover:bg-gray-100 dark:hover:bg-dark-card">
+                    <button id="dark-mode-toggle-desktop" class="ml-4 p-2 rounded-full text-gray-600 dark:text-dark-text-secondary hover:bg-gray-100 dark:hover:bg-dark-card transition-colors">
                         <i data-lucide="sun" class="h-5 w-5 hidden dark:block"></i>
                         <i data-lucide="moon" class="h-5 w-5 block dark:hidden"></i>
                         <span class="sr-only">Toggle dark mode</span>
                     </button>
                     
                     <!-- Resume Button (Desktop) -->
-                    <a href="#resume" class="bg-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-primary-dark transition-colors ml-2">View Resume</a>
+                    <a href="#resume" class="bg-primary text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-primary-dark transition-all shadow-md hover:shadow-lg ml-2">View Resume</a>
                 </div>
                 
                 <!-- Mobile Menu Toggles -->
@@ -212,35 +221,41 @@
         </nav>
         
         <!-- Mobile Menu Panel -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-dark-card shadow-lg">
-            <a href="#about" class="block px-4 py-3 text-gray-700 dark:text-dark-text hover:bg-gray-100 dark:hover:bg-gray-700">About</a>
-            <a href="#education" class="block px-4 py-3 text-gray-700 dark:text-dark-text hover:bg-gray-100 dark:hover:bg-gray-700">Education</a>
-            <a href="#certifications" class="block px-4 py-3 text-gray-700 dark:text-dark-text hover:bg-gray-100 dark:hover:bg-gray-700">Certifications</a>
-            <a href="#projects" class="block px-4 py-3 text-gray-700 dark:text-dark-text hover:bg-gray-100 dark:hover:bg-gray-700">Projects</a>
-            <a href="#research" class="block px-4 py-3 text-gray-700 dark:text-dark-text hover:bg-gray-100 dark:hover:bg-gray-700">Research</a>
-            <a href="#testimonials" class="block px-4 py-3 text-gray-700 dark:text-dark-text hover:bg-gray-100 dark:hover:bg-gray-700">Testimonials</a>
-            <a href="#contact" class="block px-4 py-3 text-gray-700 dark:text-dark-text hover:bg-gray-100 dark:hover:bg-gray-700">Contact</a>
-            <a href="#resume" class="block px-4 py-3 text-gray-700 dark:text-dark-text hover:bg-gray-100 dark:hover:bg-gray-700">View Resume</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-dark-card shadow-lg border-t border-gray-100 dark:border-gray-800">
+            <a href="#about" class="block px-4 py-3 text-gray-700 dark:text-dark-text hover:bg-gray-50 dark:hover:bg-gray-800 font-medium">About</a>
+            <a href="#education" class="block px-4 py-3 text-gray-700 dark:text-dark-text hover:bg-gray-50 dark:hover:bg-gray-800 font-medium">Education</a>
+            <a href="#certifications" class="block px-4 py-3 text-gray-700 dark:text-dark-text hover:bg-gray-50 dark:hover:bg-gray-800 font-medium">Certifications</a>
+            <a href="#projects" class="block px-4 py-3 text-gray-700 dark:text-dark-text hover:bg-gray-50 dark:hover:bg-gray-800 font-medium">Projects</a>
+            <a href="#research" class="block px-4 py-3 text-gray-700 dark:text-dark-text hover:bg-gray-50 dark:hover:bg-gray-800 font-medium">Research</a>
+            <a href="#testimonials" class="block px-4 py-3 text-gray-700 dark:text-dark-text hover:bg-gray-50 dark:hover:bg-gray-800 font-medium">Testimonials</a>
+            <a href="#contact" class="block px-4 py-3 text-gray-700 dark:text-dark-text hover:bg-gray-50 dark:hover:bg-gray-800 font-medium">Contact</a>
+            <a href="#resume" class="block px-4 py-3 text-primary dark:text-primary font-bold hover:bg-gray-50 dark:hover:bg-gray-800">View Resume</a>
         </div>
     </header>
 
     <main>
         <!-- Hero Section -->
-        <section id="home" class="min-h-[80vh] flex items-center bg-white dark:bg-dark-card shadow-sm">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-                <div class="flex flex-col md:flex-row items-center gap-12">
-                    <div class="md:w-1/2 text-center md:text-left">
-                        <span class="text-primary font-semibold">BS Computer Science Graduate</span>
+        <section id="home" class="min-h-[85vh] flex items-center bg-white dark:bg-dark-card shadow-sm relative overflow-hidden">
+            <!-- Background Blob -->
+            <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl opacity-50 dark:opacity-20 pointer-events-none"></div>
+            
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+                <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+                    <div class="md:w-1/2 text-center md:text-left animate-fade-in-up">
+                        <span class="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-4 border border-primary/20">BS Computer Science Graduate</span>
                         <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 dark:text-dark-text mt-2 mb-6 leading-tight tracking-tight">Hi, I'm <span id="typing-name"></span></h1>
-                        <p class="text-lg text-gray-600 dark:text-dark-text-secondary mb-8">I'm passionate about Artificial Intelligence and Machine Learning. This portfolio showcases my academic journey, technical projects, and professional certifications.</p>
+                        <p class="text-lg text-gray-600 dark:text-dark-text-secondary mb-8 leading-relaxed">I'm passionate about <span class="font-semibold text-gray-800 dark:text-gray-200">Artificial Intelligence</span> and <span class="font-semibold text-gray-800 dark:text-gray-200">Machine Learning</span>. This portfolio showcases my academic journey, technical projects, and professional certifications.</p>
                         <div class="flex gap-4 justify-center md:justify-start">
-                            <a href="#projects" class="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-primary-dark transition-transform hover:scale-105 shadow-lg">View My Projects</a>
-                            <a href="resume.pdf" download class="bg-gray-100 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-200 dark:bg-dark-bg dark:text-dark-text dark:hover:bg-gray-700 transition-transform hover:scale-105">Download CV</a>
+                            <a href="#projects" class="bg-primary text-white px-7 py-3.5 rounded-xl font-semibold hover:bg-primary-dark transition-transform hover:scale-105 shadow-lg hover:shadow-primary/30">View My Projects</a>
+                            <a href="resume.pdf" download class="bg-white text-gray-700 border border-gray-200 px-7 py-3.5 rounded-xl font-semibold hover:bg-gray-50 dark:bg-dark-bg dark:text-dark-text dark:border-gray-700 dark:hover:bg-gray-800 transition-transform hover:scale-105 shadow-sm">Download CV</a>
                         </div>
                     </div>
-                    <div class="md:w-1/2">
-                        <!-- Professional Photo -->
-                         <img src="https://raw.githubusercontent.com/ArbazRizvi/syedarbazrizvi/refs/heads/main/syed%20Arbaz%20Ali%20Rizvi.jpg" alt="A professional headshot of Syed Arbaz Ali Rizvi" class="rounded-full shadow-2xl w-3/4 md:w-full max-w-md mx-auto aspect-square object-cover protected-img" onerror="this.src='https://placehold.co/600x600/CCCCCC/FFFFFF?text=Professional+Photo'; this.onerror=null;">
+                    <div class="md:w-1/2 flex justify-center">
+                        <!-- Professional Photo Container -->
+                        <div class="relative w-64 h-64 md:w-80 md:h-80">
+                            <div class="absolute inset-0 bg-primary/20 rounded-full blur-2xl transform scale-110"></div>
+                            <img src="https://raw.githubusercontent.com/ArbazRizvi/syedarbazrizvi/refs/heads/main/syed%20Arbaz%20Ali%20Rizvi.jpg" alt="A professional headshot of Syed Arbaz Ali Rizvi" class="relative rounded-full shadow-2xl w-full h-full object-cover border-4 border-white dark:border-dark-card protected-img z-10" onerror="this.src='https://placehold.co/600x600/CCCCCC/FFFFFF?text=Professional+Photo'; this.onerror=null;">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -248,64 +263,77 @@
 
         <!-- About Me Section -->
         <section id="about" class="py-24 md:py-32 fade-in-section">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-dark-text tracking-tight mb-6">About Me</h2>
-                 <p id="about-me-content" class="text-lg text-gray-600 dark:text-dark-text-secondary mb-8">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-dark-text tracking-tight mb-8">About Me</h2>
+                 <p id="about-me-content" class="text-lg text-gray-600 dark:text-dark-text-secondary mb-8 leading-relaxed">
                      My name is <b>Syed Arbaz Ali Rizvi</b>, and I am a recent graduate from <b>GC University Faisalabad (Layyah Campus)</b> with a Bachelor of Science in Computer Science <b>(CGPA 3.41/4.00)</b>. My fascination with Artificial Intelligence and Machine Learning began during my coursework and was solidified by completing specializations from Stanford Online and IBM. I am driven to apply my skills in Python, data analysis, and web development to solve complex, real-world problems.
                  </p>
-                 <p class="text-lg text-gray-800 dark:text-dark-text font-semibold mb-8">
-                     I am actively seeking graduate (Masters/PhD) or research opportunities in the field of Applied Machine Learning and Computer Vision.
-                 </p>
+                 <div class="inline-block bg-primary/5 border border-primary/20 rounded-lg p-4">
+                     <p class="text-lg text-gray-800 dark:text-dark-text font-semibold">
+                         🚀 I am actively seeking graduate (Masters/PhD) or research opportunities in the field of Applied Machine Learning and Computer Vision.
+                     </p>
+                 </div>
             </div>
         </section>
 
         <!-- Education & Skills Section -->
-        <section id="education" class="py-24 md:py-32 bg-white dark:bg-dark-card fade-in-section shadow-sm">
+        <section id="education" class="py-24 md:py-32 bg-white dark:bg-dark-card fade-in-section shadow-sm border-y border-gray-100 dark:border-gray-800">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-dark-text text-center mb-12 tracking-tight">Education & Skills</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-dark-text text-center mb-16 tracking-tight">Education & Skills</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <!-- Education Card -->
-                    <div class="bg-light-gray dark:bg-dark-bg p-6 rounded-xl shadow-lg">
-                        <i data-lucide="graduation-cap" class="w-10 h-10 text-primary mb-4"></i>
-                        <h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-3">Education</h3>
-                        <p class="font-medium dark:text-dark-text-secondary">BS Computer Science</p>
-                        <p class="text-gray-600 dark:text-dark-text-secondary mb-2">GC University Faisalabad, Layyah Campus</p>
-                        <p class="text-sm text-gray-500 dark:text-gray-400">2020 - 2024</p>
-                        <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">CGPA: 3.41 / 4.00</p>
+                    <div class="bg-gray-50 dark:bg-dark-bg p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-gray-700">
+                        <div class="bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
+                            <i data-lucide="graduation-cap" class="w-6 h-6 text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-dark-text mb-4">Education</h3>
+                        <div class="space-y-1">
+                            <p class="font-semibold text-lg text-gray-800 dark:text-gray-200">BS Computer Science</p>
+                            <p class="text-gray-600 dark:text-dark-text-secondary">GC University Faisalabad</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Layyah Campus</p>
+                            <div class="flex justify-between items-center mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+                                <span class="text-sm text-gray-500 dark:text-gray-400">2020 - 2024</span>
+                                <span class="bg-green-100 text-green-800 text-xs font-bold px-2 py-1 rounded dark:bg-green-900/50 dark:text-green-300">CGPA: 3.41</span>
+                            </div>
+                        </div>
                     </div>
                     <!-- Coursework Card -->
-                    <div class="bg-light-gray dark:bg-dark-bg p-6 rounded-xl shadow-lg">
-                        <i data-lucide="book-marked" class="w-10 h-10 text-primary mb-4"></i>
-                        <h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-3">Relevant Coursework</h3>
-                        <ul class="list-disc list-inside text-gray-600 dark:text-dark-text-secondary space-y-1">
-                            <li>Artificial Intelligence (A-)</li>
-                            <li>Web Design and Development (A-)</li>
-                            <li>Data Structure and Algorithms (B)</li>
-                            <li>Database Systems (B+)</li>
-                            <li>Compiler Construction (A-)</li>
-                            <li>Final Year Project (A)</li>
+                    <div class="bg-gray-50 dark:bg-dark-bg p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-gray-700">
+                        <div class="bg-blue-100 dark:bg-blue-900/30 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
+                            <i data-lucide="book-marked" class="w-6 h-6 text-blue-600 dark:text-blue-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-dark-text mb-4">Relevant Coursework</h3>
+                        <ul class="space-y-2 text-gray-600 dark:text-dark-text-secondary text-sm">
+                            <li class="flex items-start"><span class="mr-2 text-primary">•</span> Artificial Intelligence (A-)</li>
+                            <li class="flex items-start"><span class="mr-2 text-primary">•</span> Web Design & Development (A-)</li>
+                            <li class="flex items-start"><span class="mr-2 text-primary">•</span> Data Structure & Algorithms (B)</li>
+                            <li class="flex items-start"><span class="mr-2 text-primary">•</span> Database Systems (B+)</li>
+                            <li class="flex items-start"><span class="mr-2 text-primary">•</span> Compiler Construction (A-)</li>
+                            <li class="flex items-start"><span class="mr-2 text-primary">•</span> Final Year Project (A)</li>
                         </ul>
                     </div>
                     <!-- Skills Card -->
-                    <div class="bg-light-gray dark:bg-dark-bg p-6 rounded-xl shadow-lg">
-                        <i data-lucide="wrench" class="w-10 h-10 text-primary mb-4"></i>
-                        <h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-3">Key Skills</h3>
+                    <div class="bg-gray-50 dark:bg-dark-bg p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-gray-700">
+                        <div class="bg-purple-100 dark:bg-purple-900/30 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
+                            <i data-lucide="wrench" class="w-6 h-6 text-purple-600 dark:text-purple-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-dark-text mb-4">Key Skills</h3>
                         <div class="flex flex-wrap gap-2">
-                            <span class="bg-primary/20 text-primary text-sm font-medium px-3 py-1 rounded-full">Python</span>
-                            <span class="bg-primary/20 text-primary text-sm font-medium px-3 py-1 rounded-full">Machine Learning</span>
-                            <span class="bg-primary/20 text-primary text-sm font-medium px-3 py-1 rounded-full">Scikit-learn</span>
-                            <span class="bg-primary/20 text-primary text-sm font-medium px-3 py-1 rounded-full">PyTorch</span>
-                            <span class="bg-primary/20 text-primary text-sm font-medium px-3 py-1 rounded-full">Data Science</span>
-                            <span class="bg-primary/20 text-primary text-sm font-medium px-3 py-1 rounded-full">HTML/CSS</span>
-                            <span class="bg-primary/20 text-primary text-sm font-medium px-3 py-1 rounded-full">JavaScript</span>
-                            <span class="bg-primary/20 text-primary text-sm font-medium px-3 py-1 rounded-full">Git & GitHub</span>
+                            <span class="bg-white dark:bg-dark-card border border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-300 text-sm font-medium px-3 py-1.5 rounded-lg">Python</span>
+                            <span class="bg-white dark:bg-dark-card border border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-300 text-sm font-medium px-3 py-1.5 rounded-lg">Machine Learning</span>
+                            <span class="bg-white dark:bg-dark-card border border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-300 text-sm font-medium px-3 py-1.5 rounded-lg">Scikit-learn</span>
+                            <span class="bg-white dark:bg-dark-card border border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-300 text-sm font-medium px-3 py-1.5 rounded-lg">PyTorch</span>
+                            <span class="bg-white dark:bg-dark-card border border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-300 text-sm font-medium px-3 py-1.5 rounded-lg">Data Science</span>
+                            <span class="bg-white dark:bg-dark-card border border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-300 text-sm font-medium px-3 py-1.5 rounded-lg">HTML/CSS</span>
+                            <span class="bg-white dark:bg-dark-card border border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-300 text-sm font-medium px-3 py-1.5 rounded-lg">JavaScript</span>
+                            <span class="bg-white dark:bg-dark-card border border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-300 text-sm font-medium px-3 py-1.5 rounded-lg">Git & GitHub</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Certifications Section (REDESIGNED) -->
+        <!-- Certifications Section -->
         <section id="certifications" class="py-24 md:py-32 fade-in-section">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
@@ -331,19 +359,15 @@
                                     <span>Specialization</span>
                                 </div>
                             </div>
-                            
                             <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-green-600 transition-colors">Machine Learning Specialization</h3>
                             <p class="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-4">Stanford University & DeepLearning.AI</p>
-                            
                             <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-6 flex-grow">
                                 Comprehensive 3-course series covering Supervised Learning, Neural Networks, and Reinforcement Learning.
                             </p>
-                            
                             <a href="https://coursera.org/verify/specialization/UONCYGSQKNUE" target="_blank" class="mt-auto flex items-center justify-center w-full px-4 py-3 text-sm font-semibold text-white bg-green-600 rounded-xl hover:bg-green-700 transition-all shadow-md hover:shadow-lg">
                                 Verify Credential <i data-lucide="external-link" class="w-4 h-4 ml-2"></i>
                             </a>
                         </div>
-                        <!-- Background decoration -->
                         <div class="absolute top-0 right-0 -mt-8 -mr-8 w-32 h-32 bg-green-500/10 rounded-full blur-2xl group-hover:bg-green-500/20 transition-all"></div>
                     </div>
 
@@ -359,14 +383,11 @@
                                     <span>2 ECTS</span>
                                 </div>
                             </div>
-                            
                             <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 transition-colors">Elements of AI</h3>
                             <p class="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-4">University of Helsinki</p>
-                            
                             <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-6 flex-grow">
                                 Fundamental concepts of AI philosophy, logic, and constraint satisfaction problems.
                             </p>
-                            
                             <a href="https://certificates.mooc.fi/validate/uy1mlikbit" target="_blank" class="mt-auto flex items-center justify-center w-full px-4 py-3 text-sm font-semibold text-white bg-blue-600 rounded-xl hover:bg-blue-700 transition-all shadow-md hover:shadow-lg">
                                 Verify Credential <i data-lucide="external-link" class="w-4 h-4 ml-2"></i>
                             </a>
@@ -386,14 +407,11 @@
                                     <span>Advanced</span>
                                 </div>
                             </div>
-                            
                             <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-purple-600 transition-colors">Advanced Learning Algorithms</h3>
                             <p class="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-4">DeepLearning.AI</p>
-                            
                             <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-6 flex-grow">
                                 In-depth implementation of Neural Networks, Decision Trees, and model evaluation metrics.
                             </p>
-                            
                             <a href="https://coursera.org/verify/AI1C9BOXZLLD" target="_blank" class="mt-auto flex items-center justify-center w-full px-4 py-3 text-sm font-semibold text-white bg-purple-600 rounded-xl hover:bg-purple-700 transition-all shadow-md hover:shadow-lg">
                                 Verify Credential <i data-lucide="external-link" class="w-4 h-4 ml-2"></i>
                             </a>
@@ -413,14 +431,11 @@
                                     <span>IBM</span>
                                 </div>
                             </div>
-                            
                             <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-yellow-600 transition-colors">Python for Data Science & AI</h3>
                             <p class="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-4">IBM</p>
-                            
                             <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-6 flex-grow">
                                 Technical programming skills for deploying AI models and data manipulation.
                             </p>
-                            
                             <a href="https://coursera.org/verify/TR98L3XFAD2J" target="_blank" class="mt-auto flex items-center justify-center w-full px-4 py-3 text-sm font-semibold text-white bg-yellow-600 rounded-xl hover:bg-yellow-700 transition-all shadow-md hover:shadow-lg">
                                 Verify Credential <i data-lucide="external-link" class="w-4 h-4 ml-2"></i>
                             </a>
@@ -440,14 +455,11 @@
                                     <span>Advanced</span>
                                 </div>
                             </div>
-                            
                             <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-red-600 transition-colors">Unsupervised & Reinforcement Learning</h3>
                             <p class="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-4">DeepLearning.AI</p>
-                            
                             <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-6 flex-grow">
                                 Focus on clustering, anomaly detection, and recommender systems.
                             </p>
-                            
                             <a href="https://coursera.org/verify/PCLTJPSID2X5" target="_blank" class="mt-auto flex items-center justify-center w-full px-4 py-3 text-sm font-semibold text-white bg-red-600 rounded-xl hover:bg-red-700 transition-all shadow-md hover:shadow-lg">
                                 Verify Credential <i data-lucide="external-link" class="w-4 h-4 ml-2"></i>
                             </a>
@@ -467,14 +479,11 @@
                                     <span>Web Dev</span>
                                 </div>
                             </div>
-                            
                             <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-teal-600 transition-colors">HTML, CSS, and Javascript</h3>
                             <p class="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-4">Johns Hopkins University</p>
-                            
                             <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-6 flex-grow">
                                 Full-stack web development foundations for HCI and multimodal system interfaces.
                             </p>
-                            
                             <a href="https://coursera.org/verify/RAQHKGAXNGR8" target="_blank" class="mt-auto flex items-center justify-center w-full px-4 py-3 text-sm font-semibold text-white bg-teal-600 rounded-xl hover:bg-teal-700 transition-all shadow-md hover:shadow-lg">
                                 Verify Credential <i data-lucide="external-link" class="w-4 h-4 ml-2"></i>
                             </a>
@@ -493,8 +502,8 @@
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="py-24 md:py-32 bg-gray-50 dark:bg-dark-bg fade-in-section relative overflow-hidden">
+        <!-- Projects Section (UPDATED) -->
+        <section id="projects" class="py-24 md:py-32 bg-gray-50 dark:bg-dark-bg fade-in-section relative overflow-hidden border-y border-gray-100 dark:border-gray-800">
             <!-- Decorative background element -->
             <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none opacity-30">
                 <div class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-primary/10 blur-3xl"></div>
@@ -502,7 +511,7 @@
             </div>
 
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div class="text-center mb-16">
+                <div class="text-center mb-20">
                     <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-dark-text tracking-tight mb-4">
                         Featured <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-500">Projects</span>
                     </h2>
@@ -511,126 +520,144 @@
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Project 1 -->
-                    <div class="group bg-white dark:bg-dark-card rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 overflow-hidden hover:-translate-y-1">
-                        <div class="relative overflow-hidden">
-                            <img src="https://placehold.co/600x400/0D9488/FFFFFF?text=Kids+Guard+App+(FYP)" alt="Screenshot of Kids Guard Application" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110 protected-img" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Project+1'; this.onerror=null;">
-                            <!-- Overlay Gradient -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            <!-- Category Badge -->
-                            <span class="absolute top-4 right-4 bg-white/90 dark:bg-dark-bg/90 backdrop-blur-sm text-primary text-xs font-bold px-3 py-1 rounded-full shadow-sm border border-primary/20">
-                                📱 Android & AI
-                            </span>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900 dark:text-dark-text mb-2 group-hover:text-primary transition-colors">Kids Guard Application (FYP)</h3>
-                            <p id="project-desc-1" class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4 line-clamp-3">My 'A' Grade Final Year Project. A comprehensive Android parental control app with AI-powered cyberbullying detection and real-time location tracking.</p>
-                            
-                            <!-- Tech Stack Pills -->
-                            <div class="flex flex-wrap gap-2 mb-6">
-                                <span class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs font-medium px-2.5 py-0.5 rounded border border-gray-200 dark:border-gray-700">Java</span>
-                                <span class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs font-medium px-2.5 py-0.5 rounded border border-gray-200 dark:border-gray-700">Firebase</span>
-                                <span class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs font-medium px-2.5 py-0.5 rounded border border-gray-200 dark:border-gray-700">BERT (NLP)</span>
+                <!-- Academic Capstone Section (BSCS) -->
+                <div class="mb-20">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="h-10 w-2 bg-gradient-to-b from-primary to-blue-500 rounded-full"></div>
+                        <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">Academic Capstone (BSCS)</h3>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Project 1: Kids Guard (Highlight) -->
+                        <div class="group bg-white dark:bg-dark-card rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 overflow-hidden hover:-translate-y-1 col-span-1 md:col-span-2 flex flex-col md:flex-row">
+                            <div class="relative overflow-hidden md:w-2/5">
+                                <img src="https://placehold.co/600x400/0D9488/FFFFFF?text=Kids+Guard+App+(FYP)" alt="Screenshot of Kids Guard Application" class="w-full h-64 md:h-full object-cover transition-transform duration-500 group-hover:scale-110 protected-img" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Project+1'; this.onerror=null;">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                <span class="absolute top-4 left-4 bg-yellow-500/90 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm border border-white/20 flex items-center">
+                                    <i data-lucide="star" class="w-3 h-3 mr-1 fill-current"></i> 'A' Grade Project
+                                </span>
                             </div>
+                            <div class="p-8 md:w-3/5 flex flex-col justify-center">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="text-2xl font-bold text-gray-900 dark:text-dark-text group-hover:text-primary transition-colors">Kids Guard Application (FYP)</h3>
+                                </div>
+                                <p class="text-gray-600 dark:text-dark-text-secondary text-base mb-6 leading-relaxed">My Final Year Project. A comprehensive Android parental control app integrating AI-powered cyberbullying detection and real-time location tracking.</p>
+                                
+                                <div class="flex flex-wrap gap-2 mb-8">
+                                    <span class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs font-medium px-3 py-1.5 rounded-lg border border-gray-200 dark:border-gray-700">Java (Android)</span>
+                                    <span class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs font-medium px-3 py-1.5 rounded-lg border border-gray-200 dark:border-gray-700">Firebase</span>
+                                    <span class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs font-medium px-3 py-1.5 rounded-lg border border-gray-200 dark:border-gray-700">BERT (NLP)</span>
+                                    <span class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs font-medium px-3 py-1.5 rounded-lg border border-gray-200 dark:border-gray-700">Flask API</span>
+                                </div>
 
-                            <div class="flex gap-4 pt-2 border-t border-gray-100 dark:border-gray-700">
-                                <button data-modal-target="project-modal-1" class="flex items-center text-primary font-medium hover:text-primary-dark transition-colors text-sm">
-                                    <i data-lucide="eye" class="w-4 h-4 mr-1"></i> View Details
-                                </button>
-                                <a href="https://github.com/ArbazRizvi/kids360" class="flex items-center text-gray-500 font-medium hover:text-gray-800 dark:text-gray-400 dark:hover:text-white transition-colors text-sm">
-                                    <i data-lucide="github" class="w-4 h-4 mr-1"></i> GitHub
-                                </a>
+                                <div class="flex gap-4">
+                                    <button data-modal-target="project-modal-1" class="px-5 py-2.5 bg-primary/10 text-primary hover:bg-primary hover:text-white rounded-lg font-medium transition-all text-sm flex items-center">
+                                        <i data-lucide="eye" class="w-4 h-4 mr-2"></i> View Details
+                                    </button>
+                                    <a href="https://github.com/ArbazRizvi/kids360" class="px-5 py-2.5 bg-gray-100 text-gray-600 hover:bg-gray-200 hover:text-gray-900 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white rounded-lg font-medium transition-all text-sm flex items-center">
+                                        <i data-lucide="github" class="w-4 h-4 mr-2"></i> Source Code
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Project 2 -->
-                    <div class="group bg-white dark:bg-dark-card rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 overflow-hidden hover:-translate-y-1">
-                        <div class="relative overflow-hidden">
-                            <img src="https://placehold.co/600x400/0F766E/FFFFFF?text=Web+App+Development" alt="Screenshot of Web Dev Project" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110 protected-img" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Project+2'; this.onerror=null;">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            <span class="absolute top-4 right-4 bg-white/90 dark:bg-dark-bg/90 backdrop-blur-sm text-blue-600 text-xs font-bold px-3 py-1 rounded-full shadow-sm border border-blue-200">
-                                🌐 Web Dev
-                            </span>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900 dark:text-dark-text mb-2 group-hover:text-primary transition-colors">Responsive Restaurant Site</h3>
-                            <p id="project-desc-2" class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4 line-clamp-3">A mobile-first restaurant website built for my JHU course, featuring dynamic menu loading from a JSON file using the Fetch API.</p>
-                            
-                            <div class="flex flex-wrap gap-2 mb-6">
-                                <span class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs font-medium px-2.5 py-0.5 rounded border border-gray-200 dark:border-gray-700">HTML5</span>
-                                <span class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs font-medium px-2.5 py-0.5 rounded border border-gray-200 dark:border-gray-700">CSS3</span>
-                                <span class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs font-medium px-2.5 py-0.5 rounded border border-gray-200 dark:border-gray-700">JavaScript</span>
-                            </div>
-
-                            <div class="flex gap-4 pt-2 border-t border-gray-100 dark:border-gray-700">
-                                <button data-modal-target="project-modal-2" class="flex items-center text-primary font-medium hover:text-primary-dark transition-colors text-sm">
-                                    <i data-lucide="eye" class="w-4 h-4 mr-1"></i> View Details
-                                </button>
-                                <a href="https://github.com/ArbazRizvi/restaurantwebsite" class="flex items-center text-gray-500 font-medium hover:text-gray-800 dark:text-gray-400 dark:hover:text-white transition-colors text-sm">
-                                    <i data-lucide="github" class="w-4 h-4 mr-1"></i> GitHub
-                                </a>
-                            </div>
-                        </div>
+                <!-- Independent Projects Section -->
+                <div>
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="h-10 w-2 bg-gradient-to-b from-purple-500 to-pink-500 rounded-full"></div>
+                        <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">Independent Projects</h3>
                     </div>
 
-                    <!-- Project 3 -->
-                    <div class="group bg-white dark:bg-dark-card rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 overflow-hidden hover:-translate-y-1">
-                        <div class="relative overflow-hidden">
-                            <img src="https://placehold.co/600x400/134E4A/FFFFFF?text=Machine+Learning+Model" alt="Screenshot of ML Project" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110 protected-img" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Project+3'; this.onerror=null;">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            <span class="absolute top-4 right-4 bg-white/90 dark:bg-dark-bg/90 backdrop-blur-sm text-green-600 text-xs font-bold px-3 py-1 rounded-full shadow-sm border border-green-200">
-                                🤖 ML Model
-                            </span>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900 dark:text-dark-text mb-2 group-hover:text-primary transition-colors">CVD Risk Classifier</h3>
-                            <p id="project-desc-3" class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4 line-clamp-3">A Scikit-learn project from my Stanford course to predict 10-year cardiovascular disease risk using various classification models.</p>
-                            
-                            <div class="flex flex-wrap gap-2 mb-6">
-                                <span class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs font-medium px-2.5 py-0.5 rounded border border-gray-200 dark:border-gray-700">Python</span>
-                                <span class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs font-medium px-2.5 py-0.5 rounded border border-gray-200 dark:border-gray-700">Scikit-learn</span>
-                                <span class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs font-medium px-2.5 py-0.5 rounded border border-gray-200 dark:border-gray-700">Pandas</span>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Project 2 -->
+                        <div class="group bg-white dark:bg-dark-card rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 overflow-hidden hover:-translate-y-1">
+                            <div class="relative overflow-hidden">
+                                <img src="https://placehold.co/600x400/0F766E/FFFFFF?text=Web+App+Development" alt="Screenshot of Web Dev Project" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110 protected-img" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Project+2'; this.onerror=null;">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                <span class="absolute top-4 right-4 bg-white/90 dark:bg-dark-bg/90 backdrop-blur-sm text-blue-600 text-xs font-bold px-3 py-1 rounded-full shadow-sm border border-blue-200">
+                                    🌐 Web Dev
+                                </span>
                             </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-dark-text mb-2 group-hover:text-primary transition-colors">Responsive Restaurant Site</h3>
+                                <p id="project-desc-2" class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4 line-clamp-3">A mobile-first restaurant website built for my JHU course, featuring dynamic menu loading from a JSON file using the Fetch API.</p>
+                                
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                    <span class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs font-medium px-2.5 py-0.5 rounded border border-gray-200 dark:border-gray-700">HTML5</span>
+                                    <span class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs font-medium px-2.5 py-0.5 rounded border border-gray-200 dark:border-gray-700">CSS3</span>
+                                    <span class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs font-medium px-2.5 py-0.5 rounded border border-gray-200 dark:border-gray-700">JS</span>
+                                </div>
 
-                            <div class="flex gap-4 pt-2 border-t border-gray-100 dark:border-gray-700">
-                                <button data-modal-target="project-modal-3" class="flex items-center text-primary font-medium hover:text-primary-dark transition-colors text-sm">
-                                    <i data-lucide="eye" class="w-4 h-4 mr-1"></i> View Details
-                                </button>
-                                <a href="https://github.com/ArbazRizvi/CVD_Risk_Classifier" class="flex items-center text-gray-500 font-medium hover:text-gray-800 dark:text-gray-400 dark:hover:text-white transition-colors text-sm">
-                                    <i data-lucide="github" class="w-4 h-4 mr-1"></i> GitHub
-                                </a>
+                                <div class="flex gap-4 pt-2 border-t border-gray-100 dark:border-gray-700">
+                                    <button data-modal-target="project-modal-2" class="flex items-center text-primary font-medium hover:text-primary-dark transition-colors text-sm">
+                                        <i data-lucide="eye" class="w-4 h-4 mr-1"></i> View Details
+                                    </button>
+                                    <a href="https://github.com/ArbazRizvi/restaurantwebsite" class="flex items-center text-gray-500 font-medium hover:text-gray-800 dark:text-gray-400 dark:hover:text-white transition-colors text-sm">
+                                        <i data-lucide="github" class="w-4 h-4 mr-1"></i> GitHub
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Project 4: RL Pathfinder -->
-                    <div class="group bg-white dark:bg-dark-card rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 overflow-hidden hover:-translate-y-1">
-                        <div class="relative overflow-hidden">
-                            <img src="https://placehold.co/600x400/2c3e50/FFFFFF?text=Reinforcement+Learning+Agent" alt="RL GridWorld" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110 protected-img" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=RL+Project'; this.onerror=null;">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            <span class="absolute top-4 right-4 bg-white/90 dark:bg-dark-bg/90 backdrop-blur-sm text-purple-600 text-xs font-bold px-3 py-1 rounded-full shadow-sm border border-purple-200">
-                                🧠 MSc Prep
-                            </span>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900 dark:text-dark-text mb-2 group-hover:text-primary transition-colors">Q-Learning GridWorld Solver</h3>
-                            <p id="project-desc-4" class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4 line-clamp-3">A "Planning & Reinforcement Learning" implementation. An AI agent that learns to navigate a hazardous grid using the Bellman Equation.</p>
-                            
-                            <div class="flex flex-wrap gap-2 mb-6">
-                                <span class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs font-medium px-2.5 py-0.5 rounded border border-gray-200 dark:border-gray-700">Python</span>
-                                <span class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs font-medium px-2.5 py-0.5 rounded border border-gray-200 dark:border-gray-700">NumPy</span>
-                                <span class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs font-medium px-2.5 py-0.5 rounded border border-gray-200 dark:border-gray-700">RL</span>
+                        <!-- Project 3 -->
+                        <div class="group bg-white dark:bg-dark-card rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 overflow-hidden hover:-translate-y-1">
+                            <div class="relative overflow-hidden">
+                                <img src="https://placehold.co/600x400/134E4A/FFFFFF?text=Machine+Learning+Model" alt="Screenshot of ML Project" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110 protected-img" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Project+3'; this.onerror=null;">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                <span class="absolute top-4 right-4 bg-white/90 dark:bg-dark-bg/90 backdrop-blur-sm text-green-600 text-xs font-bold px-3 py-1 rounded-full shadow-sm border border-green-200">
+                                    🤖 ML Model
+                                </span>
                             </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-dark-text mb-2 group-hover:text-primary transition-colors">CVD Risk Classifier</h3>
+                                <p id="project-desc-3" class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4 line-clamp-3">A Scikit-learn project from my Stanford course to predict 10-year cardiovascular disease risk using various classification models.</p>
+                                
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                    <span class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs font-medium px-2.5 py-0.5 rounded border border-gray-200 dark:border-gray-700">Python</span>
+                                    <span class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs font-medium px-2.5 py-0.5 rounded border border-gray-200 dark:border-gray-700">Scikit-learn</span>
+                                    <span class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs font-medium px-2.5 py-0.5 rounded border border-gray-200 dark:border-gray-700">Pandas</span>
+                                </div>
 
-                            <div class="flex gap-4 pt-2 border-t border-gray-100 dark:border-gray-700">
-                                <button data-modal-target="project-modal-4" class="flex items-center text-primary font-medium hover:text-primary-dark transition-colors text-sm">
-                                    <i data-lucide="eye" class="w-4 h-4 mr-1"></i> View Details
-                                </button>
-                                <a href="https://github.com/ArbazRizvi/RL-GridWorld-Solver" target="_blank" class="flex items-center text-gray-500 font-medium hover:text-gray-800 dark:text-gray-400 dark:hover:text-white transition-colors text-sm">
-                                    <i data-lucide="github" class="w-4 h-4 mr-1"></i> GitHub
-                                </a>
+                                <div class="flex gap-4 pt-2 border-t border-gray-100 dark:border-gray-700">
+                                    <button data-modal-target="project-modal-3" class="flex items-center text-primary font-medium hover:text-primary-dark transition-colors text-sm">
+                                        <i data-lucide="eye" class="w-4 h-4 mr-1"></i> View Details
+                                    </button>
+                                    <a href="https://github.com/ArbazRizvi/CVD_Risk_Classifier" class="flex items-center text-gray-500 font-medium hover:text-gray-800 dark:text-gray-400 dark:hover:text-white transition-colors text-sm">
+                                        <i data-lucide="github" class="w-4 h-4 mr-1"></i> GitHub
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 4: RL Pathfinder -->
+                        <div class="group bg-white dark:bg-dark-card rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 overflow-hidden hover:-translate-y-1">
+                            <div class="relative overflow-hidden">
+                                <img src="https://placehold.co/600x400/2c3e50/FFFFFF?text=Reinforcement+Learning+Agent" alt="RL GridWorld" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110 protected-img" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=RL+Project'; this.onerror=null;">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                <span class="absolute top-4 right-4 bg-white/90 dark:bg-dark-bg/90 backdrop-blur-sm text-purple-600 text-xs font-bold px-3 py-1 rounded-full shadow-sm border border-purple-200">
+                                    🧠 MSc Prep
+                                </span>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-dark-text mb-2 group-hover:text-primary transition-colors">Q-Learning GridWorld Solver</h3>
+                                <p id="project-desc-4" class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4 line-clamp-3">A "Planning & Reinforcement Learning" implementation. An AI agent that learns to navigate a hazardous grid using the Bellman Equation.</p>
+                                
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                    <span class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs font-medium px-2.5 py-0.5 rounded border border-gray-200 dark:border-gray-700">Python</span>
+                                    <span class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs font-medium px-2.5 py-0.5 rounded border border-gray-200 dark:border-gray-700">NumPy</span>
+                                    <span class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs font-medium px-2.5 py-0.5 rounded border border-gray-200 dark:border-gray-700">RL</span>
+                                </div>
+
+                                <div class="flex gap-4 pt-2 border-t border-gray-100 dark:border-gray-700">
+                                    <button data-modal-target="project-modal-4" class="flex items-center text-primary font-medium hover:text-primary-dark transition-colors text-sm">
+                                        <i data-lucide="eye" class="w-4 h-4 mr-1"></i> View Details
+                                    </button>
+                                    <a href="https://github.com/ArbazRizvi/RL-GridWorld-Solver" target="_blank" class="flex items-center text-gray-500 font-medium hover:text-gray-800 dark:text-gray-400 dark:hover:text-white transition-colors text-sm">
+                                        <i data-lucide="github" class="w-4 h-4 mr-1"></i> GitHub
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
