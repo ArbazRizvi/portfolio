@@ -30,10 +30,6 @@
                         'light-gray': '#F8FAFC',
                         'dark-bg': '#111827',
                         'dark-card': '#1F2937',
-                        /* FIX 1: Corrected invalid hex code. 
-                          '#F3F4G' is not a valid color. 
-                          Changed to '#F3F4F6' (a light gray).
-                        */
                         'dark-text': '#F3F4F6', 
                         'dark-text-secondary': '#9CA3AF',
                     }
@@ -271,71 +267,97 @@
         <!-- Certifications Section -->
         <section id="certifications" class="py-24 md:py-32 fade-in-section">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-dark-text text-center mb-12 tracking-tight">Verifiable Certifications</h2>
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-dark-text tracking-tight mb-4">Verifiable Certifications</h2>
+                    <p class="text-lg text-gray-600 dark:text-dark-text-secondary max-w-2xl mx-auto">Specialized coursework completed from top-tier institutions to meet European Master's degree prerequisites.</p>
+                </div>
+                
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Certificate 1 -->
-                    <div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col">
+                    
+                    <!-- 1. Master's Prep: Machine Learning Specialization (High Priority) -->
+                    <div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col border-t-4 border-primary transform hover:-translate-y-1 transition-transform duration-300">
+                        <div class="p-6 flex-grow">
+                            <div class="flex justify-between items-start mb-4">
+                                <i data-lucide="brain-circuit" class="w-10 h-10 text-primary"></i>
+                                <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">Specialization</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-dark-text mb-2">Machine Learning Specialization</h3>
+                            <p class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Stanford University & DeepLearning.AI</p>
+                            <p class="text-gray-600 dark:text-dark-text-secondary text-sm">Comprehensive 3-course series covering Supervised Learning, Neural Networks, and Reinforcement Learning.</p>
+                        </div>
+                        <!-- ID: UONCYGSQKNUE -->
+                        <a href="https://coursera.org/verify/specialization/UONCYGSQKNUE" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-primary hover:text-white transition-colors">
+                            Verify Credential <i data-lucide="external-link" class="w-4 h-4 inline ml-1"></i>
+                        </a>
+                    </div>
+
+                    <!-- 2. Master's Prep: Elements of AI (European Standard) -->
+                    <div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col transform hover:-translate-y-1 transition-transform duration-300">
                         <div class="p-6 flex-grow">
                             <i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i>
-                            <h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">Machine Learning with Scikit-learn, PyTorch & Hugging Face</h3>
-                            <p class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4">Stanford University / DeepLearning.AI (Coursera)</p>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-dark-text mb-2">Elements of AI</h3>
+                            <p class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">University of Helsinki (2 ECTS)</p>
+                            <p class="text-gray-600 dark:text-dark-text-secondary text-sm">Fundamental concepts of AI philosophy, logic, and constraint satisfaction problems.</p>
                         </div>
-                        <a href="https://coursera.org/verify/specialization/UONCYGSQKNUE" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Certificate</a>
+                        <!-- ID: uy1mlikbit -->
+                        <a href="https://certificates.mooc.fi/validate/uy1mlikbit" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Credential</a>
                     </div>
-                    <!-- Certificate 2 -->
-                    <div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col">
+
+                    <!-- 3. Advanced Math/Algo: Advanced Learning Algorithms -->
+                    <div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col transform hover:-translate-y-1 transition-transform duration-300">
                         <div class="p-6 flex-grow">
-                            <i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i>
-                            <h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">Python for Data Science, AI & Development</h3>
-                            <p class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4">IBM (Coursera)</p>
+                            <i data-lucide="sigma" class="w-10 h-10 text-primary mb-4"></i>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-dark-text mb-2">Advanced Learning Algorithms</h3>
+                            <p class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">DeepLearning.AI</p>
+                            <p class="text-gray-600 dark:text-dark-text-secondary text-sm">In-depth implementation of Neural Networks, Decision Trees, and model evaluation metrics.</p>
                         </div>
-                        <a href="https://coursera.org/verify/TR98L3XFAD2J" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Certificate</a>
+                        <!-- ID: AI1C9BOXZLLD -->
+                        <a href="https://coursera.org/verify/AI1C9BOXZLLD" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Credential</a>
                     </div>
-                    <!-- Certificate 3 -->
-                    <div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col">
+
+                    <!-- 4. Technical Skills: Python for Data Science -->
+                    <div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col transform hover:-translate-y-1 transition-transform duration-300">
                         <div class="p-6 flex-grow">
-                            <i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i>
-                            <h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">HTML, CSS, and Javascript for Web Developers</h3>
-                            <p class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4">Johns Hopkins University (Coursera)</p>
+                            <i data-lucide="code-2" class="w-10 h-10 text-primary mb-4"></i>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-dark-text mb-2">Python for Data Science & AI</h3>
+                            <p class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">IBM</p>
+                            <p class="text-gray-600 dark:text-dark-text-secondary text-sm">Technical programming skills for deploying AI models and data manipulation.</p>
                         </div>
-                        <a href="https://coursera.org/verify/RAQHKGAXNGR8" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Certificate</a>
+                        <!-- ID: TR98L3XFAD2J -->
+                        <a href="https://coursera.org/verify/TR98L3XFAD2J" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Credential</a>
                     </div>
-                    <!-- Certificate 4 -->
-                    <div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col">
+
+                    <!-- 5. Advanced Math: Unsupervised Learning -->
+                    <div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col transform hover:-translate-y-1 transition-transform duration-300">
                         <div class="p-6 flex-grow">
-                            <i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i>
-                            <h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">Data Science Methodology</h3>
-                            <p class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4">IBM (Coursera)</p>
+                            <i data-lucide="network" class="w-10 h-10 text-primary mb-4"></i>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-dark-text mb-2">Unsupervised & Reinforcement Learning</h3>
+                            <p class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">DeepLearning.AI</p>
+                            <p class="text-gray-600 dark:text-dark-text-secondary text-sm">Focus on clustering, anomaly detection, and recommender systems.</p>
                         </div>
-                        <a href="https://coursera.org/verify/N7SMV2ECGA62" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Certificate</a>
+                        <!-- ID: PCLTJPSID2X5 -->
+                        <a href="https://coursera.org/verify/PCLTJPSID2X5" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Credential</a>
                     </div>
-                    <!-- Certificate 5 -->
-                    <div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col">
+
+                    <!-- 6. Web Dev: JHU -->
+                    <div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col transform hover:-translate-y-1 transition-transform duration-300">
                         <div class="p-6 flex-grow">
-                            <i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i>
-                            <h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">Elements of AI</h3>
-                            <p class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4">University of Helsinki</p>
+                            <i data-lucide="layout" class="w-10 h-10 text-primary mb-4"></i>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-dark-text mb-2">HTML, CSS, and Javascript</h3>
+                            <p class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Johns Hopkins University</p>
+                            <p class="text-gray-600 dark:text-dark-text-secondary text-sm">Full-stack web development foundations for HCI and multimodal system interfaces.</p>
                         </div>
-                        <a href="https.certificates.mooc.fi/validate/uy1mlikbit" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Certificate</a>
+                        <!-- ID: RAQHKGAXNGR8 -->
+                        <a href="https://coursera.org/verify/RAQHKGAXNGR8" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Credential</a>
                     </div>
-                    <!-- Certificate 6 -->
-                    <div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col">
-                        <div class="p-6 flex-grow">
-                            <i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i>
-                            <h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">What is Data Science?</h3>
-                            <p class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4">IBM (Coursera)</p>
-                        </div>
-                        <a href="https://coursera.org/verify/KW6DBA6YXZPZ" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Certificate</a>
-                    </div>
-                    <!-- Certificate 7 (Optional) -->
-                    <div class="bg-white dark:bg-dark-card rounded-xl shadow-lg overflow-hidden flex flex-col">
-                        <div class="p-6 flex-grow">
-                            <i data-lucide="award" class="w-10 h-10 text-primary mb-4"></i>
-                            <h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">Tools for Data Science</h3>
-                            <p class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4">IBM (Coursera)</p>
-                        </div>
-                        <a href="https://coursera.org/verify/L89SA6K49DS5" target="_blank" class="block bg-light-gray dark:bg-dark-bg p-4 text-center font-medium text-primary hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Verify Certificate</a>
-                    </div>
+
+                </div>
+                
+                <!-- Extra link to full profile -->
+                <div class="text-center mt-12">
+                    <a href="https://www.linkedin.com/in/syed-arbaz-ali-rizvi/" target="_blank" class="inline-flex items-center text-primary hover:text-primary-dark font-medium transition-colors">
+                        View all licenses & certifications on LinkedIn <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i>
+                    </a>
                 </div>
             </div>
         </section>
@@ -381,6 +403,23 @@
                             </div>
                          </div>
                     </div>
+
+                    <!-- Project 4: RL Pathfinder (New) -->
+                    <div class="bg-light-gray dark:bg-dark-bg rounded-xl shadow-lg overflow-hidden transform hover:scale-[1.03] transition-transform duration-300">
+                         <!-- Placeholder Image for RL -->
+                         <img src="https://placehold.co/600x400/2c3e50/FFFFFF?text=Reinforcement+Learning+Agent" alt="RL GridWorld" class="w-full h-48 object-cover protected-img" onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=RL+Project'; this.onerror=null;">
+                         <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text">Q-Learning GridWorld Solver</h3>
+                                <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2 py-0.5 rounded dark:bg-purple-900 dark:text-purple-300">MSc Prep</span>
+                            </div>
+                            <p id="project-desc-4" class="text-gray-600 dark:text-dark-text-secondary text-sm mb-4 mt-2">A "Planning & Reinforcement Learning" implementation. An AI agent that learns to navigate a hazardous grid using the Bellman Equation.</p>
+                            <div class="flex gap-4">
+                                <button data-modal-target="project-modal-4" class="text-primary font-medium hover:text-primary-dark">View Details</button>
+                                <a href="https://github.com/ArbazRizvi/RL-GridWorld-Solver" target="_blank" class="text-gray-500 font-medium hover:text-primary-dark dark:text-gray-400">GitHub</a>
+                            </div>
+                         </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -391,7 +430,7 @@
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-dark-text text-center mb-12 tracking-tight">Research & Publications</h2>
                 <div class="space-y-8">
                     <!-- Publication 1 (Placeholder) -->
-                   <div class="bg-white dark:bg-dark-card p-6 rounded-xl shadow-lg">
+                    <div class="bg-white dark:bg-dark-card p-6 rounded-xl shadow-lg">
                         <h3 class="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2">KidsGuard: A Multimodal Deep Learning Framework for Real-Time Cyberbullying Detection and Physical Risk Mitigation</h3>
                         <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Technical Paper, October 25</p>
                         <p class="text-gray-600 dark:text-dark-text-secondary mb-4">
@@ -516,11 +555,11 @@
     <footer class="bg-gray-800 dark:bg-dark-bg dark:border-t dark:border-gray-700 text-gray-400 py-12">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
               <div class="flex justify-center space-x-6 mb-6">
-                   <!-- Add your real links here -->
-                   <a href="https://www.linkedin.com/in/syed-arbaz-ali-rizvi/" class="hover:text-white" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
-                   <a href="https://github.com/ArbazRizvi" class="hover:text-white" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i data-lucide="github" class="w-6 h-6"></i></a>
-                   <a href="mailto:20.bscs.929@gmail.com" class="hover:text-white" aria-label="Email"><i data-lucide="mail" class="w-6 h-6"></i></a>
-                   <a href="https://scholar.google.com/citations?hl=en&user=-fAHegIAAAAJ" class="hover:text-white" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar"><i data-lucide="graduation-cap" class="w-6 h-6"></i></a>
+                    <!-- Add your real links here -->
+                    <a href="https://www.linkedin.com/in/syed-arbaz-ali-rizvi/" class="hover:text-white" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
+                    <a href="https://github.com/ArbazRizvi" class="hover:text-white" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i data-lucide="github" class="w-6 h-6"></i></a>
+                    <a href="mailto:20.bscs.929@gmail.com" class="hover:text-white" aria-label="Email"><i data-lucide="mail" class="w-6 h-6"></i></a>
+                    <a href="https://scholar.google.com/citations?hl=en&user=-fAHegIAAAAJ" class="hover:text-white" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar"><i data-lucide="graduation-cap" class="w-6 h-6"></i></a>
               </div>
               <p>© <span id="current-year"></span> Syed Arbaz Ali Rizvi. All rights reserved.</p>
         </div>
@@ -647,6 +686,44 @@
                     <div>
                         <h4 class="font-semibold text-gray-800 dark:text-dark-text mb-1">Result</h4>
                         <p>The optimized Random Forest classifier achieved the highest F1-score (89%), demonstrating a strong understanding of the end-to-end machine learning pipeline from data ingestion to model tuning and evaluation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 4: RL GridWorld (New) -->
+    <div id="project-modal-4" class="modal-backdrop fixed inset-0 bg-gray-900/10 z-[60] flex items-center justify-center p-4 hidden">
+        <div class="modal-content bg-white dark:bg-dark-card rounded-xl shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-6 md:p-8 relative">
+                <button data-modal-close="project-modal-4" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-white">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+                
+                <h3 class="text-2xl font-bold text-gray-900 dark:text-dark-text mb-6">Q-Learning GridWorld Solver</h3>
+                
+                <img src="https://placehold.co/600x400/2c3e50/FFFFFF?text=Reinforcement+Learning+Agent" alt="RL Project Placeholder" class="w-full h-64 object-cover rounded-lg mb-6 protected-img">
+
+                <div class="space-y-4 text-gray-600 dark:text-dark-text-secondary">
+                    <div>
+                        <h4 class="font-semibold text-gray-800 dark:text-dark-text mb-1">Objective</h4>
+                        <p>To prepare for the "Planning & Reinforcement Learning" module (12 Credits) of the Master's curriculum by implementing core RL algorithms from scratch without relying on high-level libraries.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-gray-800 dark:text-dark-text mb-1">Methodology</h4>
+                        <p>Implemented a <b>Q-Learning</b> algorithm (Off-policy TD control) to solve a navigation problem. The agent explores a grid environment using an <b>Epsilon-Greedy strategy</b>, learning to avoid static hazards and reach a goal state by maximizing cumulative rewards based on the Bellman Equation.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-gray-800 dark:text-dark-text mb-2">Tech Stack</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-primary/20 text-primary text-sm font-medium px-3 py-1 rounded-full">Python</span>
+                            <span class="bg-primary/20 text-primary text-sm font-medium px-3 py-1 rounded-full">NumPy</span>
+                            <span class="bg-primary/20 text-primary text-sm font-medium px-3 py-1 rounded-full">Mathematics (Bellman Eq)</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-gray-800 dark:text-dark-text mb-1">Key Concept</h4>
+                        <p>Demonstrates the fundamental tradeoff between <b>Exploration</b> (discovering new paths) and <b>Exploitation</b> (using the best-known path) in AI decision-making.</p>
                     </div>
                 </div>
             </div>
@@ -880,8 +957,3 @@
 
 </body>
 </html>
-
-
-
-
-
